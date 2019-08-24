@@ -24,9 +24,10 @@ def bubble_sort(arr):
         for i in range(0, len(arr) - 1):
             j = i + 1
             if arr[i] > arr[j]:
-                temp = arr[i]
-                arr[i] = arr[j]
-                arr[j] = temp
+                arr[i], arr[j] = arr[j], arr[i]
+                # temp = arr[i]
+                # arr[i] = arr[j]
+                # arr[j] = temp
                 count += 1
         swap = False if count == 0 else True
 
@@ -35,20 +36,20 @@ def bubble_sort(arr):
 
 # STRETCH: implement the Count Sort function below
 def count_sort(arr, maximum=-1):
-    count_arr = [0 for i in range(0, maximum + 1)]
+    count_arr = [0] * (maximum + 1)
     for i in arr:
         count_arr[i] += 1
 
     for i in range(1, len(count_arr)):
         count_arr[i] += count_arr[i - 1]
 
-    final_arr = [0 for i in range(0, len(arr))]
+    final_arr = [0] * len(arr)
     for i in range(0, len(arr)):
         right_index = count_arr[arr[i]] - 1
-        count_arr[arr[i]] -= i
+        count_arr[arr[i]] -= 1
         final_arr[right_index] = arr[i]
     return final_arr
 
 
-print(count_sort([3, 5, 4, 1, 2], 5))
+print(count_sort([2, 5, 4, 1, 2], 5))
 
