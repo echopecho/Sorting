@@ -11,7 +11,7 @@ def merge(arrA, arrB):
         elif len(arrB) == 0:
             merged_arr.extend(arrA)
             arrA = []
-        elif arrA[0] < arrB[0]:
+        elif arrA[0] <= arrB[0]:
             merged_arr.append(arrA[0])
             arrA.pop(0)
         elif arrA[0] > arrB[0]:
@@ -55,5 +55,5 @@ def timsort(arr):
     return arr
 
 
-print(merge_sort([5, 2, 3, 1, 7, 4, 9, 8, 6]))
+print(merge_sort([5, 2, 3, 1, 7, 3, 9, 8, 6, 8, 12, 2, 34, 5, 9, 14, 17, 22]))
 

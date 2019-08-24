@@ -25,9 +25,6 @@ def bubble_sort(arr):
             j = i + 1
             if arr[i] > arr[j]:
                 arr[i], arr[j] = arr[j], arr[i]
-                # temp = arr[i]
-                # arr[i] = arr[j]
-                # arr[j] = temp
                 count += 1
         swap = False if count == 0 else True
 
@@ -51,5 +48,5 @@ def count_sort(arr, maximum=-1):
     return final_arr
 
 
-print(count_sort([2, 5, 4, 1, 2], 5))
+print(count_sort([2, 5, 4, 1, 2, 7, 8, 21, 11, 14], 21))
 
